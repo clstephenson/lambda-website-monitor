@@ -1,4 +1,5 @@
-# lambda-website-monitor
+# lambda-website-monitor 
+[![Build Status](https://travis-ci.com/clstephenson/lambda-website-monitor.svg?branch=master)](https://travis-ci.com/clstephenson/lambda-website-monitor)
 
 AWS Lambda function to check if a webserver is reachable. 
 
