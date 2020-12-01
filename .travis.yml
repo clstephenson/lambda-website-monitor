@@ -1,0 +1,25 @@
+if: commit_message !~ /(no-deploy|wip)/
+os: linux
+language: java
+jdk: openjdk11
+
+script:
+  - mvn clean package
+  - mv ./target/lambda-website-monitor*.jar ./lambda-website-monitor.jar
+
+deploy:
+  on:
+    branch: master
+  edge: true
+  provider: lambda
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  region: us-east-1
+  function_name: WebsiteMonitor
+  module_name: lambdawebsitemonitor.Handler
+  handler_name: handleRequest
+  timeout: 15
+  memory_size: 512
+  runtime: java11
+  description: 'Test if website is reachable'
+  zip: ./lambda-website-monitor.jar
