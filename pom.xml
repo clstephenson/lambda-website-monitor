@@ -7,7 +7,7 @@
     <groupId>com.clstephenson</groupId>
     <artifactId>lamdba-website-monitor</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>lambda-website-monitor</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -5,7 +5,6 @@ jdk: openjdk11
 
 script:
   - mvn clean package
-  - mv /home/travis/build/clstephenson/lambda-website-monitor/target/lambda-website-monitor*.jar ./lambda-website-monitor.jar
 
 deploy:
   on:
@@ -22,4 +21,4 @@ deploy:
   memory_size: 512
   runtime: java11
   description: 'Test if website is reachable'
-  zip: ./lambda-website-monitor.jar
+  zip: ./target/lamdba-website-monitor-1.0.jar
