@@ -5,7 +5,7 @@ jdk: openjdk11
 
 script:
   - mvn clean package
-  - mv ./target/lambda-website-monitor*.jar ./lambda-website-monitor.jar
+  - mv /home/travis/build/clstephenson/lambda-website-monitor/target/lambda-website-monitor*.jar ./lambda-website-monitor.jar
 
 deploy:
   on:
