@@ -1,4 +1,4 @@
-package lambawebsitemonitor;
+package lambdawebsitemonitor;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
@@ -16,7 +16,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-// Handler value: lambawebsitemonitor.Handler
+// Handler value: lambdawebsitemonitor.Handler
 public class Handler implements RequestHandler<ScheduledEvent, Void> {
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
