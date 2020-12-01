@@ -24,9 +24,12 @@ public class Handler implements RequestHandler<ScheduledEvent, Void> {
     @Override
     public Void handleRequest(ScheduledEvent event, Context context) {
         LambdaLogger logger = context.getLogger();
+        String url = System.getenv("URL");
 
         var eventDetail = event.getDetail();
-        String url = eventDetail.containsKey("is-test") ? System.getenv("TEST_URL") : System.getenv("URL");
+        if (eventDetail != null && eventDetail.containsKey(("is-test"))) {
+            url = System.getenv("TEST_URL");
+        }
 
         var client = HttpClient.newHttpClient();
         var request = HttpRequest.newBuilder(
