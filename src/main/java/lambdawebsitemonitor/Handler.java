@@ -27,7 +27,7 @@ public class Handler implements RequestHandler<ScheduledEvent, Void> {
         String url = System.getenv("URL");
 
         var eventDetail = event.getDetail();
-        logger.log("[INFO]: Event Detail:" + eventDetail + "\n")
+        logger.log("[INFO]: Event Detail:" + eventDetail + "\n");
         if (eventDetail != null && eventDetail.containsKey(("is-test"))) {
             url = System.getenv("TEST_URL");
         }
